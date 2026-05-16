@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://c67es8axpjw6v"]
+
+[ext_resource type="FontFile" uid="uid://cak0hnmxlib6f" path="res://assets/Xolonium-Regular.ttf" id="1_cbfwj"]
+
+[resource]
+Label/fonts/font = ExtResource("1_cbfwj")

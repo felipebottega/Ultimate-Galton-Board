@@ -1,0 +1,201 @@
+[gd_scene format=3 uid="uid://dacnf1nd4yu5k"]
+
+[ext_resource type="Script" uid="uid://dr37nn1r85k3r" path="res://scripts/hud.gd" id="1_ahhtf"]
+[ext_resource type="Theme" uid="uid://c06bmqhu26lve" path="res://resources/themes/foldable_container.tres" id="2_oo0fn"]
+[ext_resource type="Theme" uid="uid://dbxdqjj8m3nt3" path="res://resources/themes/hslider.tres" id="3_5ysmq"]
+[ext_resource type="FontFile" uid="uid://cak0hnmxlib6f" path="res://assets/Xolonium-Regular.ttf" id="4_047uy"]
+[ext_resource type="Theme" uid="uid://bf47dr6eik6ne" path="res://resources/themes/option_button.tres" id="4_uo2fv"]
+[ext_resource type="Theme" uid="uid://c67es8axpjw6v" path="res://resources/themes/label.tres" id="5_5pdws"]
+[ext_resource type="Theme" uid="uid://dexrgr76fvg0p" path="res://resources/themes/button.tres" id="5_047uy"]
+[ext_resource type="Texture2D" uid="uid://bdba7amtxy8q4" path="res://assets/fullscreen.png" id="8_hd3ao"]
+
+[node name="HUD" type="CanvasLayer" unique_id=446246549]
+process_mode = 3
+script = ExtResource("1_ahhtf")
+
+[node name="AboutContent" type="RichTextLabel" parent="." unique_id=70682046]
+visible = false
+offset_left = 20.0
+offset_top = 150.0
+offset_right = 575.0
+offset_bottom = 611.0
+theme_override_fonts/normal_font = ExtResource("4_047uy")
+bbcode_enabled = true
+text = "[b]Parameters[/b]
+	[b]Gravity:[/b] Controls how strongly gravity affects the object.
+	[b]Bounce:[/b] Controls how much the object bounces after collisions.
+	[b]Pins:[/b] Defines the number of pin rows.
+	[b]Sticks:[/b] Defines the number of sticks.
+
+ [b]What is a Galton Board?[/b]
+	Galton board is a device where balls fall through a grid of pins, 
+	demonstrating randomness and how repeated random events
+	naturally form a bell-shaped distribution.
+
+[b]References[/b]
+	[color=green][url]https://en.wikipedia.org/wiki/Galton_board[/url][/color]
+	[color=green][url]https://www.mathsisfun.com/data/quincunx-explained.html[/url][/color]
+
+[b]Credits[/b]
+	Music: John Cage - Dream
+	Engine: Godot
+	Production: Integral Pixels"
+
+[node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=16496150]
+offset_left = 5.0
+offset_top = 2.0
+offset_right = 171.0
+offset_bottom = 228.0
+size_flags_horizontal = 3
+theme = ExtResource("2_oo0fn")
+folded = true
+title = "Parameters"
+title_alignment = 1
+
+[node name="Parameters" type="VBoxContainer" parent="FoldableContainer" unique_id=245000619]
+visible = false
+layout_mode = 2
+
+[node name="Gravity" type="HSlider" parent="FoldableContainer/Parameters" unique_id=332084339]
+layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("3_5ysmq")
+min_value = 0.01
+max_value = 1.0
+step = 0.01
+value = 0.09999999999999999
+
+[node name="Label" type="Label" parent="FoldableContainer/Parameters/Gravity" unique_id=70664656]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 56.0
+offset_bottom = 3.0
+theme = ExtResource("5_5pdws")
+text = "Gravity = 0.1"
+
+[node name="Bounce" type="HSlider" parent="FoldableContainer/Parameters" unique_id=2025054627]
+layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("3_5ysmq")
+max_value = 0.3
+step = 0.01
+
+[node name="Label" type="Label" parent="FoldableContainer/Parameters/Bounce" unique_id=874431419]
+layout_mode = 0
+offset_top = -21.0
+offset_right = 58.0
+offset_bottom = 2.0
+theme = ExtResource("5_5pdws")
+text = "Bounce = 0.0"
+
+[node name="Pins" type="HSlider" parent="FoldableContainer/Parameters" unique_id=1486308224]
+layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("3_5ysmq")
+min_value = 4.0
+max_value = 25.0
+value = 16.0
+
+[node name="Label" type="Label" parent="FoldableContainer/Parameters/Pins" unique_id=411461426]
+layout_mode = 0
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 3.0
+theme = ExtResource("5_5pdws")
+text = "Pins = 16 rows"
+
+[node name="Sticks" type="HSlider" parent="FoldableContainer/Parameters" unique_id=1941641598]
+layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("3_5ysmq")
+min_value = 4.0
+max_value = 25.0
+value = 12.0
+
+[node name="Label" type="Label" parent="FoldableContainer/Parameters/Sticks" unique_id=112571257]
+layout_mode = 0
+offset_top = -19.0
+offset_right = 45.0
+offset_bottom = 4.0
+theme = ExtResource("5_5pdws")
+text = "Sticks = 12"
+
+[node name="FoldableContainer2" type="FoldableContainer" parent="." unique_id=1042367408]
+offset_left = 421.0
+offset_top = 2.0
+offset_right = 594.0
+offset_bottom = 237.0
+size_flags_horizontal = 3
+theme = ExtResource("2_oo0fn")
+folded = true
+title = "Options"
+title_alignment = 1
+
+[node name="Options" type="VBoxContainer" parent="FoldableContainer2" unique_id=1533183161]
+visible = false
+layout_mode = 2
+
+[node name="Background" type="OptionButton" parent="FoldableContainer2/Options" unique_id=2125259733]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("4_uo2fv")
+alignment = 1
+selected = 2
+item_count = 6
+popup/item_0/text = "Background 1"
+popup/item_0/id = 0
+popup/item_1/text = "Background 2"
+popup/item_1/id = 1
+popup/item_2/text = "Background 3"
+popup/item_2/id = 2
+popup/item_3/text = "Background 4"
+popup/item_3/id = 3
+popup/item_4/text = "Background 5"
+popup/item_4/id = 4
+popup/item_5/text = "Background 6"
+popup/item_5/id = 5
+
+[node name="Pause" type="Button" parent="FoldableContainer2/Options" unique_id=558572527]
+process_mode = 3
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("5_047uy")
+text = "Pause"
+
+[node name="Reset" type="Button" parent="FoldableContainer2/Options" unique_id=1060241374]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("5_047uy")
+text = "Reset"
+
+[node name="Quit" type="Button" parent="FoldableContainer2/Options" unique_id=2035722033]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("5_047uy")
+text = "Quit"
+
+[node name="About" type="Button" parent="FoldableContainer2/Options" unique_id=1242261219]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("5_047uy")
+text = "About"
+
+[node name="FullScreen" type="Button" parent="." unique_id=289776951]
+offset_left = 556.0
+offset_top = 766.0
+offset_right = 598.0
+offset_bottom = 798.0
+icon = ExtResource("8_hd3ao")
+
+[connection signal="meta_clicked" from="AboutContent" to="." method="_on_about_content_meta_clicked"]
+[connection signal="value_changed" from="FoldableContainer/Parameters/Gravity" to="." method="_on_gravity_value_changed"]
+[connection signal="value_changed" from="FoldableContainer/Parameters/Bounce" to="." method="_on_bounce_value_changed"]
+[connection signal="value_changed" from="FoldableContainer/Parameters/Pins" to="." method="_on_pins_value_changed"]
+[connection signal="value_changed" from="FoldableContainer/Parameters/Sticks" to="." method="_on_sticks_value_changed"]
+[connection signal="item_selected" from="FoldableContainer2/Options/Background" to="." method="_on_background_item_selected"]
+[connection signal="pressed" from="FoldableContainer2/Options/Pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="FoldableContainer2/Options/Reset" to="." method="_on_reset_pressed"]
+[connection signal="pressed" from="FoldableContainer2/Options/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="FoldableContainer2/Options/About" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="FullScreen" to="." method="_on_full_screen_pressed"]

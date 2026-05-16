@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://hxphxr53sanm"]
+
+[ext_resource type="Script" uid="uid://b2s7lvycja7nu" path="res://scripts/pin.gd" id="1_p1640"]
+[ext_resource type="Texture2D" uid="uid://ch4gmp4n3djna" path="res://assets/pin.png" id="2_7o8e5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pyc1j"]
+size = Vector2(4.949748, 4.949748)
+
+[node name="Pin" type="StaticBody2D" unique_id=1925452792]
+script = ExtResource("1_p1640")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=186727463]
+rotation = 0.7853982
+scale = Vector2(2.4682877, 2.4627633)
+texture = ExtResource("2_7o8e5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=480831805]
+rotation = 0.7853982
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_pyc1j")

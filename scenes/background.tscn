@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://b6wjf04epsw8d"]
+
+[ext_resource type="Shader" uid="uid://bilh158nb70nf" path="res://resources/materials/stick.gdshader" id="1_bkp1e"]
+[ext_resource type="Shader" uid="uid://bfwg5pv1hncmw" path="res://resources/materials/sky.gdshader" id="2_y0upk"]
+[ext_resource type="Shader" uid="uid://b8w8wpmrdrvhi" path="res://resources/materials/blueprint.gdshader" id="3_jougr"]
+[ext_resource type="Shader" uid="uid://bixotnsjkh6nj" path="res://resources/materials/casino.gdshader" id="4_cbsqf"]
+[ext_resource type="Shader" uid="uid://2tclkiojlir6" path="res://resources/materials/background.gdshader" id="5_wisxt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ae5pk"]
+shader = ExtResource("1_bkp1e")
+shader_parameter/seed = 1.0
+shader_parameter/speed = 0.2
+shader_parameter/scale = 1.0
+shader_parameter/intensity = 3.0
+shader_parameter/contrast = 2.0
+shader_parameter/aspect_fix = 20.0
+shader_parameter/particle_count = 50
+shader_parameter/color_top = Color(0.08, 0, 0, 1)
+shader_parameter/color_bottom = Color(1, 0.08, 0.02, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jougr"]
+shader = ExtResource("2_y0upk")
+shader_parameter/sky_top = Color(0.015, 0.02, 0.06, 1)
+shader_parameter/sky_bottom = Color(0, 0, 0.84313726, 1)
+shader_parameter/meteor_count = 20.0
+shader_parameter/meteor_speed = 0.01
+shader_parameter/meteor_length = 0.1
+shader_parameter/meteor_thickness = 0.002
+shader_parameter/meteor_brightness = 0.5
+shader_parameter/star_density = 120.0
+shader_parameter/star_brightness = 0.75
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cbsqf"]
+shader = ExtResource("3_jougr")
+shader_parameter/bg_top = Color(0.02, 0.1, 0.2, 1)
+shader_parameter/bg_bottom = Color(0.005, 0.025, 0.08, 1)
+shader_parameter/line_color = Color(0.35, 0.72, 1, 1)
+shader_parameter/grid_strength = 0.1
+shader_parameter/drawing_strength = 0.1
+shader_parameter/vignette_strength = 0.45
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wisxt"]
+shader = ExtResource("4_cbsqf")
+shader_parameter/bg_top = Color(0.08, 0, 0.08, 1)
+shader_parameter/bg_bottom = Color(0.015, 0, 0.025, 1)
+shader_parameter/gold = Color(1, 0.62, 0.12, 1)
+shader_parameter/red_neon = Color(1, 0.02, 0.02, 1)
+shader_parameter/blue_neon = Color(0.05, 0.45, 1, 1)
+shader_parameter/bulb_strength = 0.55
+shader_parameter/neon_strength = 0.45
+shader_parameter/vignette_strength = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wax1t"]
+shader = ExtResource("5_wisxt")
+shader_parameter/sky_top = Color(0.015, 0.035, 0.08, 1)
+shader_parameter/sky_mid = Color(0.025, 0.1, 0.18, 1)
+shader_parameter/sky_bottom = Color(0.03137255, 0.12941177, 0, 1)
+shader_parameter/tree_near = Color(0.01, 0.035, 0.025, 1)
+shader_parameter/tree_far = Color(0.24495292, 0.46023738, 0.44288698, 1)
+shader_parameter/firefly_color = Color(1, 1, 0.45490196, 1)
+shader_parameter/wind_speed = 2.0
+shader_parameter/wind_strength = 0.035
+shader_parameter/tree_amount = 1.0
+shader_parameter/firefly_amount = 0.2
+shader_parameter/mist_amount = 0.28
+shader_parameter/vignette_strength = 2.0
+
+[node name="Background" type="Node2D" unique_id=593913715]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1715418614]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=840610797]
+handle_input_locally = false
+size = Vector2i(600, 800)
+render_target_update_mode = 4
+
+[node name="BG1" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=1906320477]
+visible = false
+material = SubResource("ShaderMaterial_ae5pk")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG2" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=407213170]
+visible = false
+material = SubResource("ShaderMaterial_jougr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG3" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=1600806563]
+material = SubResource("ShaderMaterial_cbsqf")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG4" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=1371593073]
+visible = false
+material = SubResource("ShaderMaterial_wisxt")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG5" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=1682091472]
+visible = false
+material = SubResource("ShaderMaterial_wax1t")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG6" type="ColorRect" parent="SubViewportContainer/SubViewport" unique_id=957947431]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03318317, 0.23526284, 0.5209894, 1)

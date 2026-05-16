@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://ckt01e6c7nq3v"]
+
+[ext_resource type="Texture2D" uid="uid://bnd0gvtvw74jg" path="res://assets/wall.png" id="1_1kf8g"]
+
+[node name="TriangleWall" type="StaticBody2D"]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture = ExtResource("1_1kf8g")
+texture_scale = Vector2(1.5, 1.5)
+polygon = PackedVector2Array(0, -7, 29, 21, 29, 43, 0, 43)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -7, 0, 43, 29, 43, 29, 21)

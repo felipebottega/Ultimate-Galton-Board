@@ -1,0 +1,34 @@
+[gd_resource type="Theme" format=3 uid="uid://dexrgr76fvg0p"]
+
+[ext_resource type="FontFile" uid="uid://cak0hnmxlib6f" path="res://assets/Xolonium-Regular.ttf" id="1_oj7kp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pstcx"]
+bg_color = Color(0.07058824, 0.8666667, 0.4862745, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.14901961, 0.039215688, 0, 0.6)
+shadow_size = 4
+shadow_offset = Vector2(1, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oj7kp"]
+bg_color = Color(0.81960785, 0.49803922, 0.4862745, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.7411765, 0.2901961, 0.28627452, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0.14901961, 0.039215688, 0, 0.6)
+shadow_size = 4
+shadow_offset = Vector2(1, 4)
+
+[resource]
+Button/fonts/font = ExtResource("1_oj7kp")
+Button/styles/hover = SubResource("StyleBoxFlat_pstcx")
+Button/styles/normal = SubResource("StyleBoxFlat_oj7kp")

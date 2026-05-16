@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://debb3r48qxtu"]
+
+[ext_resource type="Script" uid="uid://n461biuy16w4" path="res://scripts/main.gd" id="1_lquwl"]
+[ext_resource type="PackedScene" uid="uid://b6wjf04epsw8d" path="res://scenes/background.tscn" id="2_7mycd"]
+[ext_resource type="PackedScene" uid="uid://ccoyix3ndq3lr" path="res://scenes/wall.tscn" id="3_272bh"]
+[ext_resource type="PackedScene" uid="uid://ckt01e6c7nq3v" path="res://scenes/triangle_wall.tscn" id="4_5vw27"]
+[ext_resource type="PackedScene" uid="uid://dacnf1nd4yu5k" path="res://scenes/hud.tscn" id="5_kek77"]
+
+[node name="Tests" type="Node2D" unique_id=1174368889]
+script = ExtResource("1_lquwl")
+
+[node name="Background" parent="." unique_id=2134231883 instance=ExtResource("2_7mycd")]
+
+[node name="Floor" parent="." unique_id=1764198377 instance=ExtResource("3_272bh")]
+position = Vector2(304, 802)
+rotation = 1.5707964
+
+[node name="RightSlide" parent="." unique_id=930252930 instance=ExtResource("3_272bh")]
+position = Vector2(625, -191)
+rotation = -2.3561945
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="LeftSlide" parent="." unique_id=1762926341 instance=ExtResource("3_272bh")]
+position = Vector2(-25, -191)
+rotation = -0.7853982
+
+[node name="RightTriangle" parent="." unique_id=1562792728 instance=ExtResource("4_5vw27")]
+position = Vector2(318.4, 93.5)
+
+[node name="LeftTriangle" parent="." unique_id=1651664869 instance=ExtResource("4_5vw27")]
+position = Vector2(281.6, 93.5)
+scale = Vector2(-1, 1)
+
+[node name="HUD" parent="." unique_id=817609496 instance=ExtResource("5_kek77")]
+
+[connection signal="about" from="HUD" to="." method="_on_hud_about"]
+[connection signal="background" from="HUD" to="." method="_on_hud_background"]
+[connection signal="bounce" from="HUD" to="." method="_on_hud_bounce"]
+[connection signal="gravity" from="HUD" to="." method="_on_hud_gravity"]
+[connection signal="pins" from="HUD" to="." method="_on_hud_pins"]
+[connection signal="sticks" from="HUD" to="." method="_on_hud_sticks"]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ba858gtbqou71"]
+
+[ext_resource type="AudioStream" uid="uid://wmd8fywq0l1d" path="res://assets/John Cage - Dream.mp3" id="1_t0t53"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=893387029]
+process_mode = 3
+stream = ExtResource("1_t0t53")
+volume_db = -2.0
+autoplay = true

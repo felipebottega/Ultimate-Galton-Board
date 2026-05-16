@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://d4da2f1888b0b"]
+
+[ext_resource type="Script" uid="uid://tso7ewb8goh6" path="res://scripts/first_screen.gd" id="1_5oq2p"]
+[ext_resource type="Texture2D" uid="uid://bdba7amtxy8q4" path="res://assets/fullscreen.png" id="3_5oq2p"]
+[ext_resource type="FontFile" uid="uid://cak0hnmxlib6f" path="res://assets/Xolonium-Regular.ttf" id="3_7uehj"]
+
+[node name="FirstScreen" type="Node2D" unique_id=1117513525]
+script = ExtResource("1_5oq2p")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1225088566]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1515868596]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.11119685, 0.11119684, 0.11119684, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=448774951]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -83.0
+offset_top = -97.0
+offset_right = 83.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press any key to start"
+
+[node name="Title" type="RichTextLabel" parent="CanvasLayer" unique_id=1253136709]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -284.0
+offset_top = -138.0
+offset_right = 281.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_fonts/normal_font = ExtResource("3_7uehj")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "
+[wave amp=50.0 freq=1.5 connected=0][rainbow freq=2.0 sat=0.3 val=0.9 speed=0.1]    ULTIMATE  GALTON  BOARD [/rainbow][/wave]"
+
+[node name="FullScreen" type="Button" parent="CanvasLayer" unique_id=2130905887]
+offset_left = 556.0
+offset_top = 766.0
+offset_right = 598.0
+offset_bottom = 798.0
+icon = ExtResource("3_5oq2p")
+
+[connection signal="pressed" from="CanvasLayer/FullScreen" to="." method="_on_full_screen_pressed"]

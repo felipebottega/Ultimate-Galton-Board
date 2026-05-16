@@ -6,6 +6,9 @@ var time: float = 0.0
 @onready var label := $CanvasLayer/Label
 
 
+func _ready() -> void:
+	$CanvasLayer/Label2.text = "v" + ProjectSettings.get_setting("application/config/version")
+
 func _physics_process(delta: float) -> void:
 	time += 2*delta
 	label.modulate.a = sin(time)

@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="Ultimate Galton Board"
 config/description="Galton Board (Quincunx) simulator"
-config/version="0.1.0"
+config/version="1.0.0"
 run/main_scene="uid://d4da2f1888b0b"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://dtv3emukjks0o"

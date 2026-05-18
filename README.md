@@ -1,5 +1,7 @@
 # Ultimate Galton Board
 
+Link to the game: https://integral-pixels.itch.io/ultimate-galton-board
+
 ## Description
 
 A Galton Board simulator (also known as a Bean Machine or Quincunx) that explores probability through cascading particles and dynamic visual patterns.
@@ -19,5 +21,5 @@ Use the mouse or touchscreen to change the parameters. The simulation runs autom
 
 ## Release history
 
-v0.1.0: First version
-v1.0.0: Current version
+    v0.1.0: First version
+    v1.0.0: Current version

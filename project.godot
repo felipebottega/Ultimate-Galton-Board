@@ -19,7 +19,9 @@ config/description="Galton Board (Quincunx) simulator"
 config/version="1.0.0"
 run/main_scene="uid://d4da2f1888b0b"
 config/features=PackedStringArray("4.6", "GL Compatibility")
+boot_splash/image="uid://b46wfpdur41tl"
 config/icon="uid://dtv3emukjks0o"
+boot_splash/minimum_display_time=2000
 
 [autoload]
 
